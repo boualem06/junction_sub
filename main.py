@@ -1,6 +1,7 @@
 from flask import Flask,request,jsonify
 import openai
-
+import os 
+from dotenv import load_dotenv
 app = Flask(__name__)
 
 @app.route('/')
@@ -15,8 +16,9 @@ def recommend():
     monthly_save=request.json["monthly_save"]
     product_description=request.json["product_description"]
     product_price=request.json["product_price"]
-
-    openai.api_key = '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'
+    load_dotenv()
+    
+    openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 # User input prompt with financial information and desired purchase
