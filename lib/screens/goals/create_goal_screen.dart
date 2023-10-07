@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/controllers/goals_controller.dart';
-import 'package:sh7i7a/controllers/nav_bar_controller.dart';
-import 'package:sh7i7a/models/goal.dart';
-import 'package:sh7i7a/utils.dart';
-import 'package:sh7i7a/widgets/select_input.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/controllers/goals_controller.dart';
+import 'package:dinar/controllers/nav_bar_controller.dart';
+import 'package:dinar/models/goal.dart';
+import 'package:dinar/utils.dart';
+import 'package:dinar/widgets/select_input.dart';
 
 class CreateGoalScreen extends StatelessWidget {
   const CreateGoalScreen({super.key});

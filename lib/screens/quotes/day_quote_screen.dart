@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/utils.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/utils.dart';
 
 class DayQuoteScreen extends StatelessWidget {
   const DayQuoteScreen({super.key});

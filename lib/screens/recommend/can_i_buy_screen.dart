@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/controllers/nav_bar_controller.dart';
-import 'package:sh7i7a/screens/accounts/create_account_screen.dart';
-import 'package:sh7i7a/screens/recommend/recommend_screen.dart';
-import 'package:sh7i7a/widgets/text_button.dart';
-import 'package:sh7i7a/widgets/text_input.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/controllers/nav_bar_controller.dart';
+import 'package:dinar/screens/accounts/create_account_screen.dart';
+import 'package:dinar/screens/recommend/recommend_screen.dart';
+import 'package:dinar/widgets/text_button.dart';
+import 'package:dinar/widgets/text_input.dart';
 import 'package:http/http.dart' as http;
 
 class CanIBuyScreen extends StatelessWidget {

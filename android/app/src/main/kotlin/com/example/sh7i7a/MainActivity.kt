@@ -1,4 +1,4 @@
-package com.example.sh7i7a
+package com.example.dinar
 
 import io.flutter.embedding.android.FlutterActivity
 

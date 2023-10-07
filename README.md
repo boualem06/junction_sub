@@ -1,4 +1,4 @@
-# sh7i7a
+# dinar
 
 A new Flutter project.
 

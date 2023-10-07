@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/screens/accounts/payment_screen.dart';
-import 'package:sh7i7a/utils.dart';
-import 'package:sh7i7a/widgets/text_button.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/screens/accounts/payment_screen.dart';
+import 'package:dinar/utils.dart';
+import 'package:dinar/widgets/text_button.dart';
 
 class QRCodeScreen extends StatefulWidget {
   const QRCodeScreen({super.key});

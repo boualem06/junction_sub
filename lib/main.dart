@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/controllers/goals_controller.dart';
-import 'package:sh7i7a/controllers/nav_bar_controller.dart';
-import 'package:sh7i7a/controllers/settings_controller.dart';
-import 'package:sh7i7a/controllers/transactionsController.dart';
-import 'package:sh7i7a/screens/main_app.dart';
+import 'package:dinar/controllers/goals_controller.dart';
+import 'package:dinar/controllers/nav_bar_controller.dart';
+import 'package:dinar/controllers/settings_controller.dart';
+import 'package:dinar/controllers/transactionsController.dart';
+import 'package:dinar/screens/main_app.dart';
 
 void main() {
   runApp(
-    const Sh7i7aApp(),
+    const dinarApp(),
   );
 }
 
-class Sh7i7aApp extends StatelessWidget {
-  const Sh7i7aApp({super.key});
+class dinarApp extends StatelessWidget {
+  const dinarApp({super.key});
 
   @override
   Widget build(BuildContext context) {

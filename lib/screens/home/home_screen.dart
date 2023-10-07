@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/controllers/goals_controller.dart';
-import 'package:sh7i7a/controllers/nav_bar_controller.dart';
-import 'package:sh7i7a/screens/accounts/accounts_screen.dart';
-import 'package:sh7i7a/screens/accounts/qr_code_trans.dart';
-import 'package:sh7i7a/screens/accounts/widget/account_card.dart';
-import 'package:sh7i7a/screens/home/widgets/day_quote.dart';
-import 'package:sh7i7a/screens/home/widgets/transaction.dart';
-import 'package:sh7i7a/screens/recommend/can_i_buy_screen.dart';
-import 'package:sh7i7a/utils.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/controllers/goals_controller.dart';
+import 'package:dinar/controllers/nav_bar_controller.dart';
+import 'package:dinar/screens/accounts/accounts_screen.dart';
+import 'package:dinar/screens/accounts/qr_code_trans.dart';
+import 'package:dinar/screens/accounts/widget/account_card.dart';
+import 'package:dinar/screens/home/widgets/day_quote.dart';
+import 'package:dinar/screens/home/widgets/transaction.dart';
+import 'package:dinar/screens/recommend/can_i_buy_screen.dart';
+import 'package:dinar/utils.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

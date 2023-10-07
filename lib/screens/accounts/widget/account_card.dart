@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/utils.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/utils.dart';
 
 class AccountCard extends StatelessWidget {
   final String bankName;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sh7i7a/colors.dart';
+import 'package:dinar/colors.dart';
 
 class DinarInput extends TextFormField {
   final String hintText;

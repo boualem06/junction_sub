@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sh7i7a/screens/accounts/qr_code_trans.dart';
-import 'package:sh7i7a/screens/goals/goals_screen.dart';
-import 'package:sh7i7a/screens/graphs/statistics_screen.dart';
-import 'package:sh7i7a/screens/home/home_screen.dart';
-import 'package:sh7i7a/screens/profile/profile_screen.dart';
-import 'package:sh7i7a/screens/recommend/can_i_buy_screen.dart';
+import 'package:dinar/screens/accounts/qr_code_trans.dart';
+import 'package:dinar/screens/goals/goals_screen.dart';
+import 'package:dinar/screens/graphs/statistics_screen.dart';
+import 'package:dinar/screens/home/home_screen.dart';
+import 'package:dinar/screens/profile/profile_screen.dart';
+import 'package:dinar/screens/recommend/can_i_buy_screen.dart';
 
 class NavBarController extends ChangeNotifier {
   List<Widget> navs = [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sh7i7a/models/goal.dart';
+import 'package:dinar/models/goal.dart';
 
 class GoalsController extends ChangeNotifier {
   //! All Goals

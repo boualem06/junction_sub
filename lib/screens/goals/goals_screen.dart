@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/controllers/goals_controller.dart';
-import 'package:sh7i7a/controllers/nav_bar_controller.dart';
-import 'package:sh7i7a/screens/goals/create_goal_screen.dart';
-import 'package:sh7i7a/screens/goals/goal_card.dart';
-import 'package:sh7i7a/screens/home/home_screen.dart';
-import 'package:sh7i7a/utils.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/controllers/goals_controller.dart';
+import 'package:dinar/controllers/nav_bar_controller.dart';
+import 'package:dinar/screens/goals/create_goal_screen.dart';
+import 'package:dinar/screens/goals/goal_card.dart';
+import 'package:dinar/screens/home/home_screen.dart';
+import 'package:dinar/utils.dart';
 
 class GoalsScreen extends StatelessWidget {
   const GoalsScreen({super.key});

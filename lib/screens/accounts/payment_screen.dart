@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/widgets/text_button.dart';
-import 'package:sh7i7a/widgets/text_input.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/widgets/text_button.dart';
+import 'package:dinar/widgets/text_input.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 // Import for Android features.
 import 'package:webview_flutter_android/webview_flutter_android.dart';

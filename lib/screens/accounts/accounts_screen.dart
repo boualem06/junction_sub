@@ -2,10 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/screens/accounts/create_account_screen.dart';
-import 'package:sh7i7a/screens/accounts/widget/account_card.dart';
-import 'package:sh7i7a/utils.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/screens/accounts/create_account_screen.dart';
+import 'package:dinar/screens/accounts/widget/account_card.dart';
+import 'package:dinar/utils.dart';
 
 class AccountsScreen extends StatelessWidget {
   const AccountsScreen({super.key});

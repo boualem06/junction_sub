@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/controllers/settings_controller.dart';
-import 'package:sh7i7a/utils.dart';
-import 'package:sh7i7a/widgets/text_input.dart';
+import 'package:dinar/controllers/settings_controller.dart';
+import 'package:dinar/utils.dart';
+import 'package:dinar/widgets/text_input.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

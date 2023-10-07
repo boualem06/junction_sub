@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:sh7i7a/colors.dart';
+import 'package:dinar/colors.dart';
 
 // ignore: must_be_immutable
 class SelectInput extends StatefulWidget {

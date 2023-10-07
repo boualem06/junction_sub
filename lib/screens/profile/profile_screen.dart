@@ -4,11 +4,11 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:sh7i7a/colors.dart';
-import 'package:sh7i7a/controllers/nav_bar_controller.dart';
-import 'package:sh7i7a/controllers/transactionsController.dart';
-import 'package:sh7i7a/screens/profile/settings_screen.dart';
-import 'package:sh7i7a/utils.dart';
+import 'package:dinar/colors.dart';
+import 'package:dinar/controllers/nav_bar_controller.dart';
+import 'package:dinar/controllers/transactionsController.dart';
+import 'package:dinar/screens/profile/settings_screen.dart';
+import 'package:dinar/utils.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
