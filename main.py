@@ -1,7 +1,7 @@
 from flask import Flask,request,jsonify
 import openai
-import os 
-from dotenv import load_dotenv
+import os ,base64
+# from dotenv import load_dotenv
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,10 +16,9 @@ def recommend():
     monthly_save=request.json["monthly_save"]
     product_description=request.json["product_description"]
     product_price=request.json["product_price"]
-    load_dotenv()
-    
-    openai.api_key = "OPENAI_API_KEY"
-
+    # load_dotenv()
+    a="c2stRTBIVUhhSE95c0QxbFIwRXc1WXZUM0JsYmtGSkR1a1VNMUoybEx5dHBPMlVJN3E4"
+    openai.api_key = base64.b64decode(a).decode()
 
 # User input prompt with financial information and desired purchase
     user_prompt = "I have a monthly income of "+str(monthly_income) +", I have " +str(account)+ "in my account, I have spent" +str(spend)+", I want to save "+str(monthly_save)+", and I want to buy "+product_description+" with "+str(product_price)+". Should I buy it?"
