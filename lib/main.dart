@@ -1,3 +1,4 @@
+import 'package:dinar/controllers/bank_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:dinar/controllers/goals_controller.dart';
@@ -42,6 +43,9 @@ class dinarApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<EducationController>(
           create: (context) => EducationController(),
+        ),
+        ChangeNotifierProvider<BankController>(
+          create: (context) => BankController(),
         ),
       ],
       builder: (context, child) {

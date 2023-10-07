@@ -1,9 +1,12 @@
+import 'dart:ffi';
 import 'dart:math';
 
+import 'package:dinar/controllers/nav_bar_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:dinar/colors.dart';
 import 'package:dinar/widgets/text_button.dart';
 import 'package:dinar/widgets/text_input.dart';
+import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 // Import for Android features.
 import 'package:webview_flutter_android/webview_flutter_android.dart';
@@ -150,6 +153,9 @@ class PaymentScreen extends StatelessWidget {
                         height: 45,
                         label: 'CANCEL',
                         onPressed: () {
+                          // Provider.of<NavBarController>(context).navigateTo(
+                          //     Provider.of<NavBarController>(context).navs[0],
+                          //     0);
                           Navigator.pop(context);
                         },
                       ),
@@ -158,7 +164,10 @@ class PaymentScreen extends StatelessWidget {
                         height: 45,
                         label: 'PAY',
                         onPressed: () async {
-                          Navigator.push(
+                          // Provider.of<NavBarController>(context).navigateTo(
+                          //     Provider.of<NavBarController>(context).navs[0],
+                          //     0);
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const GameScreen()));

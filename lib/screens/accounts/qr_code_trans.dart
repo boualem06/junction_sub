@@ -160,10 +160,10 @@ class _ScanQRCodeState extends State<ScanQRCode> {
                       });
 
                       final qrData = barCode.code;
-                      // setState(() {
-                      //   qrController.dispose();
-                      // });
-                      Navigator.pushReplacement(
+                      setState(() {
+                        qrController.dispose();
+                      });
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const PaymentScreen()));

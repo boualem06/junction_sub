@@ -620,7 +620,7 @@ class TransportController extends ChangeNotifier {
             day: DateTime(2023, 10, 30).subtract(Duration(
               days: index * (Random().nextInt(3) + 1),
             )),
-            amount: Random().nextInt(1000).toDouble()));
+            amount: Random().nextInt(100).toDouble()));
   }
 
   TransportController() {
