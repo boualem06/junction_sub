@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sh7i7a/controllers/goals_controller.dart';
 import 'package:sh7i7a/controllers/nav_bar_controller.dart';
+import 'package:sh7i7a/controllers/settings_controller.dart';
 import 'package:sh7i7a/controllers/transactionsController.dart';
 import 'package:sh7i7a/screens/main_app.dart';
 
@@ -20,6 +21,12 @@ class Sh7i7aApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<NavBarController>(
           create: (context) => NavBarController(),
+        ),
+        ChangeNotifierProvider<GoalsController>(
+          create: (context) => GoalsController(),
+        ),
+        ChangeNotifierProvider<SettingsController>(
+          create: (context) => SettingsController(),
         ),
         ChangeNotifierProvider<GoalsController>(
           create: (context) => GoalsController(),
@@ -49,3 +56,5 @@ class Sh7i7aApp extends StatelessWidget {
     );
   }
 }
+
+class SetttingsController {}

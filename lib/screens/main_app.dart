@@ -36,7 +36,9 @@ class MainApp extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 4 - 30 / 4,
                         child: Center(
                           child: SvgPicture.asset(
-                            getIcon(navBarController.icons[0]),
+                            getIcon(navBarController.selectedIndex == 0
+                                ? 'home1'
+                                : 'home0'),
                             color: navBarController.selectedIndex == 0
                                 ? white
                                 : blue,
@@ -56,10 +58,14 @@ class MainApp extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 4 - 30 / 4,
                         child: Center(
                           child: SvgPicture.asset(
-                            getIcon(navBarController.icons[1]),
-                            color: navBarController.selectedIndex == 0
-                                ? white
-                                : blue,
+                            getIcon(navBarController.selectedIndex != 1
+                                ? 'goal0'
+                                : 'goals1'),
+                            color: navBarController.selectedIndex == 1
+                                ? blue
+                                : navBarController.selectedIndex == 0
+                                    ? white
+                                    : blue,
                             width: 25,
                           ),
                         ),
@@ -79,7 +85,9 @@ class MainApp extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 4 - 30 / 4,
                         child: Center(
                           child: SvgPicture.asset(
-                            getIcon(navBarController.icons[3]),
+                            getIcon(navBarController.selectedIndex == 3
+                                ? 'stats1'
+                                : 'stats0'),
                             color: navBarController.selectedIndex == 0
                                 ? white
                                 : blue,
@@ -98,12 +106,11 @@ class MainApp extends StatelessWidget {
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width / 4 - 30 / 4,
                         child: Center(
-                          child: SvgPicture.asset(
-                            getIcon(navBarController.icons[4]),
-                            color: navBarController.selectedIndex == 0
-                                ? white
-                                : blue,
-                            width: 25,
+                          child: Icon(
+                            Icons.account_box_rounded,
+                            color: navBarController.selectedIndex != 0
+                                ? blue
+                                : white,
                           ),
                         ),
                       ),
@@ -129,11 +136,10 @@ class MainApp extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: white,
                   ),
-                  child: Center(
-                    child: SvgPicture.asset(
-                      getIcon(navBarController.icons[4]),
-                      color: navBarController.selectedIndex == 0 ? white : blue,
-                      width: 25,
+                  child: const Center(
+                    child: Icon(
+                      Icons.qr_code_scanner,
+                      color: blue,
                     ),
                   ),
                 ),

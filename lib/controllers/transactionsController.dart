@@ -50,7 +50,7 @@ class GraphController extends ChangeNotifier {
   List<Item> get monthsData {
     List<Item> mList = [];
 
-    double month = 1;
+    double month = 3;
     while (month <= DateTime.now().month) {
       double sum = 0;
       Iterable<DayData> monthDays = allDays.where((element) =>
@@ -269,7 +269,7 @@ class EducationController extends ChangeNotifier {
   List<Item> get monthsData {
     List<Item> mList = [];
 
-    double month = 1;
+    double month = 3;
     while (month <= DateTime.now().month) {
       double sum = 0;
       Iterable<DayData> monthDays = allDays.where((element) =>
@@ -458,7 +458,7 @@ class NutritionController extends ChangeNotifier {
   List<Item> get monthsData {
     List<Item> mList = [];
 
-    double month = 1;
+    double month = 3;
     while (month <= DateTime.now().month) {
       double sum = 0;
       Iterable<DayData> monthDays = allDays.where((element) =>
@@ -647,7 +647,7 @@ class TransportController extends ChangeNotifier {
   List<Item> get monthsData {
     List<Item> mList = [];
 
-    double month = 1;
+    double month = 3;
     while (month <= DateTime.now().month) {
       double sum = 0;
       Iterable<DayData> monthDays = allDays.where((element) =>

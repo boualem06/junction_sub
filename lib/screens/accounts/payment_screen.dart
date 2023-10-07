@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:sh7i7a/colors.dart';
 import 'package:sh7i7a/widgets/text_button.dart';
 import 'package:sh7i7a/widgets/text_input.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+// Import for Android features.
+import 'package:webview_flutter_android/webview_flutter_android.dart';
+// Import for iOS features.
+// import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 class PaymentScreen extends StatelessWidget {
   const PaymentScreen({Key? key}) : super(key: key);
@@ -41,11 +46,6 @@ class PaymentScreen extends StatelessWidget {
               children: [
                 const Column(
                   children: [
-                    // MPayIcon(
-                    //   radius: 20.0,
-                    //   size: 100.0,
-                    //   text: initials,
-                    // ),
                     SizedBox(height: 5.0),
                     Text(
                       'Ahmed Ziyani',
@@ -114,13 +114,6 @@ class PaymentScreen extends StatelessWidget {
                             keyboardType: TextInputType.number,
                             textAlign: TextAlign.center,
                           ),
-                          // Text(
-                          //   '${4000}',
-                          //   style: TextStyle(
-                          //     color: blue,
-                          //     fontSize: 38.0,
-                          //   ),
-                          // ),
                           const Text(
                             'Amount in DZD',
                             style: TextStyle(
@@ -157,8 +150,6 @@ class PaymentScreen extends StatelessWidget {
                         height: 45,
                         label: 'CANCEL',
                         onPressed: () {
-                          // transController.abandonTransaction();
-                          Navigator.pop(context);
                           Navigator.pop(context);
                         },
                       ),
@@ -166,27 +157,11 @@ class PaymentScreen extends StatelessWidget {
                         width: 120,
                         height: 45,
                         label: 'PAY',
-                        onPressed: () {
-                          Navigator.pop(context);
-                          Navigator.pop(context);
-
-                          // if (transController.paymentCase ==
-                          //     'initPayment') {
-                          //   Navigator.pushReplacement(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => PinScreen(
-                          //               pinCase: PinCases.onPut,
-                          //               nextScreen: TransactionScreen(
-                          //                 qrCodeData: qrCodeData,
-                          //                 paymentCase: 'initPayment',
-                          //               ),
-                          //             )),
-                          //   );
-                          // } else if (transController.paymentCase ==
-                          //     'confirm') {
-                          //   transController.confirmTransaction();
-                          // }
+                        onPressed: () async {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GameScreen()));
                         },
                       ),
                     ],
@@ -194,78 +169,73 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ],
             ),
-            // if (transController.isLoading && paymentCase == 'confirm')
-            //   Positioned.fill(
-            //     child: Container(
-            //       color: Colors.black54.withOpacity(0.1),
-            //       child: Center(
-            //         child: Container(
-            //           padding: const EdgeInsets.all(20.0),
-            //           decoration: BoxDecoration(
-            //             color: greyish,
-            //             borderRadius: BorderRadius.circular(10.0),
-            //           ),
-            //           child: const Row(
-            //             mainAxisSize: MainAxisSize.min,
-            //             children: [
-            //               CircularProgressIndicator(
-            //                 valueColor:
-            //                     AlwaysStoppedAnimation<Color>(Colors.red),
-            //               ),
-            //               SizedBox(width: 20.0),
-            //               Flexible(
-            //                 child: Text(
-            //                   'Validating...',
-            //                   style: TextStyle(
-            //                     fontSize: 16.0,
-            //                     fontWeight: FontWeight.bold,
-            //                   ),
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // // Show dialog when isLoading and paymentCase == 'initPayment'
-            // if (transController.isLoading && paymentCase == 'initPayment')
-            //   Positioned.fill(
-            //     child: Container(
-            //       color: Colors.black54.withOpacity(0.1),
-            //       child: Center(
-            //         child: Container(
-            //           padding: const EdgeInsets.all(20.0),
-            //           decoration: BoxDecoration(
-            //             color: grey,
-            //             borderRadius: BorderRadius.circular(10.0),
-            //           ),
-            //           child: const Row(
-            //             mainAxisSize: MainAxisSize.min,
-            //             children: [
-            //               CircularProgressIndicator(
-            //                 valueColor:
-            //                     AlwaysStoppedAnimation<Color>(Colors.red),
-            //               ),
-            //               SizedBox(width: 20.0),
-            //               Flexible(
-            //                 child: Text(
-            //                   'Filling Payment card Informations...',
-            //                   style: TextStyle(
-            //                     fontSize: 16.0,
-            //                     fontWeight: FontWeight.bold,
-            //                   ),
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class GameScreen extends StatefulWidget {
+  const GameScreen({super.key});
+
+  @override
+  State<GameScreen> createState() => _GameScreenState();
+}
+
+class _GameScreenState extends State<GameScreen> {
+  WebViewController controller = WebViewController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    controller
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..runJavaScript("if (isPlaying == true) {}")
+      ..setBackgroundColor(blue)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar.
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onWebResourceError: (WebResourceError error) {},
+        ),
+      )
+      ..loadRequest(Uri.parse('https://technosoft.dev/mobile/'));
+    super.initState();
+  }
+
+// @override
+//   void initState() {
+//     // TODO: implement initState
+
+//     late
+//  final PlatformWebViewControllerCreationParams params;
+//  if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+//   params = WebKitWebViewControllerCreationParams(
+//     allowsInlineMediaPlayback: true,
+//     mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
+//   );
+// }
+//  {
+//   params = const PlatformWebViewControllerCreationParams();
+// }
+// final WebViewController controller =
+//     WebViewController.fromPlatformCreationParams(params);
+
+//  (controller.platform is AndroidWebViewController) {
+//   AndroidWebViewController.enableDebugging(true);
+//   (controller.platform as AndroidWebViewController)
+//       .setMediaPlaybackRequiresUserGesture(false);
+//     super.initState();
+//   }
+// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: WebViewWidget(controller: controller),
     );
   }
 }

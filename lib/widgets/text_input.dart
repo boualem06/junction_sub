@@ -10,7 +10,7 @@ class DinarInput extends TextFormField {
   final double textSize;
   DinarInput({
     Key? key,
-    this.textSize = 17,
+    this.textSize = 18,
     required this.hintText,
     super.validator,
     this.letterSpacing,
@@ -46,8 +46,8 @@ class DinarInput extends TextFormField {
         ),
       ),
       hintStyle: TextStyle(
-        color: grey,
-        fontSize: 15.0,
+        color: Colors.grey,
+        fontSize: 18.0,
         letterSpacing: 1,
       ),
       hintTextDirection: TextDirection.ltr,

@@ -69,28 +69,28 @@ class AccountsScreen extends StatelessWidget {
               const Spacer(),
               //! Banks
               const AccountCard(
-                bankName: 'Kuda Bank',
+                bankName: 'ALGERIE POSTE',
                 bankAmount: 12000,
                 color: Colors.black,
-                bankIcon: 'Kuda Bank',
+                bankIcon: 'ALPOS.png',
               ),
               const AccountCard(
-                bankName: 'GTBank',
+                bankName: 'BDL',
                 bankAmount: 7899,
                 color: Color.fromRGBO(0, 0, 0, 1),
-                bankIcon: 'GTBank',
+                bankIcon: 'BDL.webp',
               ),
               const AccountCard(
-                bankName: 'PiggyVest',
+                bankName: 'Gulf Bank',
                 bankAmount: 34000,
                 color: Colors.black,
-                bankIcon: 'PiggyVest',
+                bankIcon: 'Gulf.jpg',
               ),
               const AccountCard(
-                bankName: 'UBA',
+                bankName: 'BADR',
                 bankAmount: 34000,
                 color: Colors.black,
-                bankIcon: 'UBA',
+                bankIcon: 'BADR.webp',
               ),
               const Spacer(),
 
@@ -109,7 +109,7 @@ class AccountsScreen extends StatelessWidget {
                     color: blue,
                     borderRadius: BorderRadius.circular(28),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       '+ Add a new account',
                       style: TextStyle(

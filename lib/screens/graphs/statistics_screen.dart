@@ -54,6 +54,7 @@ class StatsScreen extends StatelessWidget {
                                     child: SvgPicture.asset(
                                       getIcon('arrow'),
                                       width: 15,
+                                      color: white,
                                     ),
                                   ),
                                 ),
@@ -76,16 +77,19 @@ class StatsScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(13),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: const Color(0xFF2511BB),
+                              color: darkBlue,
                             ),
-                            child: const Row(
+                            child: Row(
                               children: [
                                 CircleAvatar(
                                   radius: 25,
                                   backgroundColor: blue,
+                                  child: SvgPicture.asset(
+                                    getIcon('goal0'),
+                                  ),
                                 ),
-                                SizedBox(width: 8),
-                                Column(
+                                const SizedBox(width: 8),
+                                const Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
@@ -105,8 +109,8 @@ class StatsScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                Spacer(),
-                                Column(
+                                const Spacer(),
+                                const Column(
                                   children: [
                                     Text(
                                       'DZD 1000',
@@ -202,27 +206,27 @@ class StatsScreen extends StatelessWidget {
                                               // color: blue.withOpacity(.7),
                                               ),
                                         ),
-                                        LineChartBarData(
-                                          colors: [Colors.yellow],
+                                        // LineChartBarData(
+                                        //   colors: [Colors.yellow],
 
-                                          isCurved: true,
-                                          barWidth: 4,
-                                          spots: List.generate(
-                                              transportController.data.length,
-                                              (index) => FlSpot(
-                                                  transportController
-                                                      .data[index].x,
-                                                  transportController
-                                                      .data[index].y)),
-                                          // color: blue,
-                                          belowBarData: BarAreaData(
-                                              // show: true,
-                                              // color: blue.withOpacity(.7),
-                                              ),
-                                        ),
+                                        //   isCurved: true,
+                                        //   barWidth: 4,
+                                        //   spots: List.generate(
+                                        //       transportController.data.length,
+                                        //       (index) => FlSpot(
+                                        //           transportController
+                                        //               .data[index].x,
+                                        //           transportController
+                                        //               .data[index].y)),
+                                        //   // color: blue,
+                                        //   belowBarData: BarAreaData(
+                                        //       // show: true,
+                                        //       // color: blue.withOpacity(.7),
+                                        //       ),
+                                        // ),
                                       ],
-                                      minX: graphController.minX,
-                                      maxX: graphController.maxX,
+                                      minX: 4,
+                                      maxX: 11,
                                       minY: graphController.minY,
                                       maxY: graphController.maxY,
                                       backgroundColor: white,
@@ -318,7 +322,7 @@ class StatsScreen extends StatelessWidget {
                                   Spacer(),
                                   CircleAvatar(
                                     radius: 7,
-                                    backgroundColor: Colors.yellow,
+                                    backgroundColor: red,
                                   ),
                                   SizedBox(width: 6),
                                   Text(
@@ -366,19 +370,19 @@ class StatsScreen extends StatelessWidget {
                                   SizedBox(
                                     width: 5,
                                   ),
-                                  CircleAvatar(
-                                    radius: 7,
-                                    backgroundColor: red,
-                                  ),
-                                  SizedBox(width: 6),
-                                  Text(
-                                    'Transport',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: black,
-                                      // fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                  // CircleAvatar(
+                                  //   radius: 7,
+                                  //   backgroundColor: red,
+                                  // ),
+                                  // SizedBox(width: 6),
+                                  // Text(
+                                  //   'Transport',
+                                  //   style: TextStyle(
+                                  //     fontSize: 16,
+                                  //     color: black,
+                                  //     // fontWeight: FontWeight.bold,
+                                  //   ),
+                                  // ),
                                   Spacer(),
                                 ],
                               ),

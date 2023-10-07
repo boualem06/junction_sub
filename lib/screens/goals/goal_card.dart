@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sh7i7a/colors.dart';
+import 'package:sh7i7a/models/goal.dart';
 
 class GoalCard extends StatelessWidget {
-  final String goalName;
-  final int ammount;
+  final Goal goal;
 
-  const GoalCard({super.key, required this.goalName, required this.ammount});
+  const GoalCard({super.key, required this.goal});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class GoalCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Monthly Goal',
-              style: TextStyle(
+            Text(
+              goal.goalName,
+              style: const TextStyle(
                 fontSize: 16,
                 color: white,
                 fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class GoalCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'John Ogaga',
+                        'Ahmed Hichem',
                         style: TextStyle(
                           fontSize: 14,
                           color: white,
@@ -60,10 +60,10 @@ class GoalCard extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    '${ammount.isNegative ? '-' : '+'}DZD$ammount',
+                    '${goal.goalType == 'Spending' ? '-' : '+'}DZD${goal.fullValue}',
                     style: TextStyle(
                       fontSize: 17,
-                      color: ammount.isNegative ? red : green,
+                      color: goal.goalType == 'Spending' ? red : green,
                       fontWeight: FontWeight.bold,
                     ),
                   )
@@ -76,22 +76,26 @@ class GoalCard extends StatelessWidget {
               width: double.infinity,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                color: green.withOpacity(.5),
+                color: goal.goalType == 'Spending'
+                    ? red.withOpacity(.5)
+                    : green.withOpacity(.5),
                 borderRadius: BorderRadius.circular(2.5),
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: green,
+                  color: goal.goalType == 'Spending' ? red : green,
                   borderRadius: BorderRadius.circular(2.5),
                 ),
-                width: 120,
+                width: 320 * goal.progress,
                 height: 5,
               ),
             ),
             const SizedBox(height: 12),
-            const Text(
-              'You are doing realy great!',
-              style: TextStyle(
+            Text(
+              goal.goalType == 'Spending'
+                  ? 'Take attention to your spending'
+                  : 'You are doing realy great!',
+              style: const TextStyle(
                 fontSize: 16,
                 color: white,
                 fontWeight: FontWeight.bold,

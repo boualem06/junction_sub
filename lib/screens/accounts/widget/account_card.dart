@@ -21,7 +21,8 @@ class AccountCard extends StatelessWidget {
       child: Row(
         children: [
           if (bankIcon != null)
-            SizedBox(width: 60, child: Image.asset(getImage(bankIcon!))),
+            SizedBox(
+                width: 60, child: Image.asset('assets/images/${bankIcon!}')),
           Text(
             bankName,
             style: TextStyle(
@@ -31,7 +32,7 @@ class AccountCard extends StatelessWidget {
           ),
           const Spacer(),
           Text(
-            '$bankAmount DZD',
+            'DZD $bankAmount',
             style: TextStyle(
               fontSize: 20,
               color: color,

@@ -4,13 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sh7i7a/colors.dart';
 import 'package:sh7i7a/controllers/nav_bar_controller.dart';
+import 'package:sh7i7a/screens/accounts/create_account_screen.dart';
 import 'package:sh7i7a/screens/recommend/recommend_screen.dart';
 import 'package:sh7i7a/widgets/text_button.dart';
 import 'package:sh7i7a/widgets/text_input.dart';
 import 'package:http/http.dart' as http;
 
 class CanIBuyScreen extends StatelessWidget {
-  const CanIBuyScreen({super.key});
+  CanIBuyScreen({super.key});
+
+  TextEditingController ctrl = TextEditingController();
+  TextEditingController ctrl2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +28,7 @@ class CanIBuyScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
+                const Spacer(),
                 const Text(
                   'Have something to buy?',
                   style: TextStyle(
@@ -38,33 +43,50 @@ class CanIBuyScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 DinarInput(
+                  controller: ctrl,
                   hintText: 'Describe your product',
                   maxLines: 15,
+                ),
+                const SizedBox(height: 20),
+                DinarInput(
+                  controller: ctrl2,
+                  hintText: 'Your product price',
+                  keyboardType: TextInputType.number,
                 ),
                 const SizedBox(height: 20),
                 DinarButton(
                   onPressed: () async {
                     // navBarController.navigateTo(
                     //     const RecommendAnswerScreen(), 2);
+                    print('object');
                     final response = await http.post(
-                      Uri.parse("http://127.0.0.1:5000/recommend"),
+                      Uri.parse("https://july-q0xh.onrender.com/recommend"),
+                      headers: {"Content-Type": "application/json"},
                       body: jsonEncode({
                         "monthly_income": 6000,
                         "account": 100000,
                         "spend": 1000,
                         "monthly_save": 2000,
-                        "product_description": 'Milk for babies',
-                        "product_price": 5
+                        "product_description": ctrl.text,
+                        "product_price": int.parse(ctrl2.text)
                       }),
                     );
-                    print(response.body);
-                    if (response.statusCode == 200) print('Hi');
+                    if (response.statusCode == 200) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RecommendAnswerScreen(
+                                    answer: response.body.toString(),
+                                  )));
+                    }
                   },
                   label: 'Can I Buy This?',
                   color: white,
                   height: 50,
+                  width: 160,
                   btnTextColor: blue,
                 ),
+                const Spacer(),
               ],
             ),
           ),

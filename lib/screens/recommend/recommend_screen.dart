@@ -3,12 +3,14 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:sh7i7a/colors.dart';
 import 'package:sh7i7a/controllers/nav_bar_controller.dart';
 import 'package:sh7i7a/utils.dart';
 import 'package:sh7i7a/widgets/text_button.dart';
 
 class RecommendAnswerScreen extends StatelessWidget {
-  const RecommendAnswerScreen({super.key});
+  final String answer;
+  const RecommendAnswerScreen({super.key, required this.answer});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +29,9 @@ class RecommendAnswerScreen extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          navBarController.navigateTo(
-                              navBarController.navs[2], 2);
+                          Navigator.pop(context);
+                          // navBarController.navigateTo(
+                          //     navBarController.navs[2], 2);
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(right: 8.0),
@@ -55,7 +58,20 @@ class RecommendAnswerScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const Text('Answer Here'),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                        color: answer.contains("Yes") ? green : red, width: 3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    answer,
+                    style: const TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
                 const Spacer(),
                 const Text('Did that help solve your question?'),
                 Row(
