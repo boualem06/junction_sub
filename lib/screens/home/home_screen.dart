@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sh7i7a/colors.dart';
 import 'package:sh7i7a/screens/accounts/accounts_screen.dart';
+import 'package:sh7i7a/screens/accounts/qr_code_trans.dart';
 import 'package:sh7i7a/screens/accounts/widget/account_card.dart';
 import 'package:sh7i7a/screens/home/widgets/day_quote.dart';
 import 'package:sh7i7a/screens/home/widgets/transaction.dart';
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                 //! App Bar
                 Row(
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -47,21 +48,29 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: darkBlue,
-                      ),
-                      child: SvgPicture.asset(
-                        getIcon('bell'),
-                        width: 20,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const QRCodeScreen()));
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: darkBlue,
+                        ),
+                        child: SvgPicture.asset(
+                          getIcon('bell'),
+                          width: 20,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 8),
                     Container(
                       padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: darkBlue,
                       ),
@@ -92,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Container(
                           padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: grey,
                           ),
@@ -101,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        Text(
+                        const Text(
                           'Your available balance is',
                           style: TextStyle(
                             fontSize: 15,
@@ -109,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w200,
                           ),
                         ),
-                        Text(
+                        const Text(
                           '998000 DZD',
                           style: TextStyle(
                             fontSize: 34,
@@ -118,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        Text(
+                        const Text(
                           'By this time, last month you spent slightly higher (2500 DZD)',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -146,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 //! Goals
-                Text(
+                const Text(
                   'My Goals',
                   style: TextStyle(
                     fontSize: 20,
@@ -166,7 +175,7 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'New Car',
                         style: TextStyle(
                           fontSize: 17,
@@ -175,7 +184,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(
+                      const Text(
                         'Left out of N80,888 budgeted',
                         style: TextStyle(
                           fontSize: 17,
@@ -202,7 +211,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Text(
+                      const Text(
                         'Saga go soon catch you bros, calm down!!',
                         style: TextStyle(
                           fontSize: 17,
@@ -216,7 +225,7 @@ class HomeScreen extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                Text(
+                const Text(
                   'Transactions',
                   style: TextStyle(
                     fontSize: 19,
@@ -233,7 +242,7 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: darkBlue,
                   ),
-                  child: Column(
+                  child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -244,16 +253,16 @@ class HomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 15),
-                      const TransactionWidget(
+                      SizedBox(height: 15),
+                      TransactionWidget(
                           reciever: 'John Ogaga',
                           bank: 'Zenith Bank',
                           ammount: 20973),
-                      const TransactionWidget(
+                      TransactionWidget(
                           reciever: 'Habib Yugurt',
                           bank: 'GT-Bank',
                           ammount: -3223),
-                      const TransactionWidget(
+                      TransactionWidget(
                           reciever: 'Kamel Orugu',
                           bank: 'GT-Bank',
                           ammount: 12344),

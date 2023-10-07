@@ -7,8 +7,10 @@ class DinarInput extends TextFormField {
   final InputDecoration decorations;
   final double? letterSpacing;
   final Color? textColor;
+  final double textSize;
   DinarInput({
     Key? key,
+    this.textSize = 17,
     required this.hintText,
     super.validator,
     this.letterSpacing,
@@ -107,7 +109,7 @@ class DinarInput extends TextFormField {
           ),
           style: TextStyle(
             color: textColor,
-            fontSize: 17.0,
+            fontSize: textSize,
             letterSpacing: letterSpacing ?? 1,
           ),
         );

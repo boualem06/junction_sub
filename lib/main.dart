@@ -27,6 +27,15 @@ class Sh7i7aApp extends StatelessWidget {
         ChangeNotifierProvider<GraphController>(
           create: (context) => GraphController(),
         ),
+        ChangeNotifierProvider<TransportController>(
+          create: (context) => TransportController(),
+        ),
+        ChangeNotifierProvider<NutritionController>(
+          create: (context) => NutritionController(),
+        ),
+        ChangeNotifierProvider<EducationController>(
+          create: (context) => EducationController(),
+        ),
       ],
       builder: (context, child) {
         return MaterialApp(

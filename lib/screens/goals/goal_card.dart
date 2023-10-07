@@ -20,7 +20,7 @@ class GoalCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Monthly Goal',
               style: TextStyle(
                 fontSize: 16,
@@ -37,7 +37,7 @@ class GoalCard extends StatelessWidget {
                     radius: 16,
                   ),
                   const SizedBox(width: 8),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -89,7 +89,7 @@ class GoalCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            Text(
+            const Text(
               'You are doing realy great!',
               style: TextStyle(
                 fontSize: 16,
