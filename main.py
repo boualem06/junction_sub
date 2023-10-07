@@ -16,7 +16,7 @@ def recommend():
     product_description=request.json["product_description"]
     product_price=request.json["product_price"]
 
-    openai.api_key = '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'
+    openai.api_key = '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'
 
 
 # User input prompt with financial information and desired purchase
