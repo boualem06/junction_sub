@@ -1,7 +1,6 @@
 from flask import Flask,request,jsonify
 import openai
-import os ,base64
-# from dotenv import load_dotenv
+import base64
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,7 +15,6 @@ def recommend():
     monthly_save=request.json["monthly_save"]
     product_description=request.json["product_description"]
     product_price=request.json["product_price"]
-    # load_dotenv()
     a="c2stRTBIVUhhSE95c0QxbFIwRXc1WXZUM0JsYmtGSkR1a1VNMUoybEx5dHBPMlVJN3E4"
     openai.api_key = base64.b64decode(a).decode()
 
